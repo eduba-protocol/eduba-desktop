@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles for HTML generated from markup */
+.markup {
+  @apply prose mx-auto;
+}
+
+/* Styles for page main elements */
+.page {
+  @apply flex-1 pt-2 overflow-y-auto;
+}
+
+/* Show/Hide close button on browse tabs */
+#browse-nav .tab + button {
+  display: none;
+}
+#browse-nav .tab:hover + button,
+#browse-nav .tab-active + button {
+  display: inline;
+}

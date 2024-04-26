@@ -1,0 +1,100 @@
+run-name: ${{ github.ref }} - ${{ github.actor }}
+
+concurrency: 1
+
+permissions:
+  contents: write
+
+# Run this workflow whenever a tag that starts with v is pushed to github.
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install required binaries
+        run: |
+          sudo apt update
+          sudo apt install -y libusb-1.0-0-dev libudev-dev rpm
+
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js & NPM
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.11.0'
+
+      - name: Install repo dependencies
+        run: yarn
+
+      - name: Make packages
+        run: yarn make
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: "true"
+          artifactErrorsFailBuild: "true"
+          generateReleaseNotes: "true"
+          prerelease: "true"
+          artifacts: "out/make/**/*.AppImage,out/make/**/*.deb,out/make/**/*.rpm,out/make/**/*.zip"
+
+  release-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js & NPM
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.11.0'
+
+      - name: Install repo dependencies
+        run: yarn
+
+      - name: Make packages
+        run: yarn make
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: "true"
+          artifactErrorsFailBuild: "true"
+          prerelease: "true"
+          artifacts: "out/make/**/*.exe"
+
+  release-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Install required packages
+        run: pip install setuptools
+
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js & NPM
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.11.0'
+
+      - name: Install repo dependencies
+        run: yarn
+
+      - name: Make packages
+        run: yarn make
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: "true"
+          artifactErrorsFailBuild: "true"
+          prerelease: "true"
+          artifacts: "out/make/**/*.dmg"

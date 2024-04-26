@@ -1,0 +1,53 @@
+export const TYPES = {
+    AppConfig: Symbol.for("AppConfig"),
+    Events: Symbol.for("Events"),
+    ElectronStore: Symbol.for("ElectronStore"),
+
+    ElectronApp: Symbol.for("ElectronApp"),
+    ElectronDialog: Symbol.for("ElectronDialog"),
+    ElectronProtocol: Symbol.for("ElectronProtocol"),
+    ElectronIpcMain: Symbol.for("ElectronIpcMain"),
+    ElectronClipboard: Symbol.for("ElectronClipboard"),
+
+    Corestore: Symbol.for("Corestore"),
+    Hyperswarm: Symbol.for("Hyperswarm"),
+    HyperdriveService: Symbol.for("HyperdriveService"),
+    HyperbeeService: Symbol.for("HyperbeeService"),
+    DriveJsonStorage: Symbol.for("DriveJsonStorage"),
+    DriveTextStorage: Symbol.for("DriveTextStorage"),
+    DriveFileStorage: Symbol.for("DriveFileStorage"),
+    BeeJsonStorage: Symbol.for("BeeJsonStorage"),
+    RepoFactory: Symbol.for("RepoFactory"),
+
+    ArticleService: Symbol.for("ArticleService"),
+    AudioService: Symbol.for("AudioService"),
+    BackupService: Symbol.for("BackupService"),
+    BookmarkService: Symbol.for("BookmarkService"),
+    ImageService: Symbol.for("ImageService"),
+    PublisherService: Symbol.for("PublisherService"),
+    SubscriptionService: Symbol.for("SubscriptionService"),
+    UploadService: Symbol.for("UploadService"),
+    UserPublisherService: Symbol.for("UserPublisherService"),
+    UserService: Symbol.for("UserService"),
+    VideoService: Symbol.for("VideoService"),
+
+    EdubaScheme: Symbol.for("EdubaScheme"),
+
+    EventBinder: Symbol.for("EventBinder"),
+    HyperbeeChangeHandler: Symbol.for("HyperbeeChangeHandler"),
+    HyperdriveChangeHandler: Symbol.for("HyperdriveChangeHandler"),
+    SessionStartHandler: Symbol.for("SessionStartHandler"),
+    SessionEndHandler: Symbol.for("SessionEndHandler"),
+    CopiedToClipboardHandler: Symbol.for("CopiedToClipboardHandler"),
+    RendererErrorHandler: Symbol.for("RendererErrorHandler"),
+
+    ArticleController: Symbol.for("ArticleController"),
+    AudioController: Symbol.for("AudioController"),
+    AuthController: Symbol.for("AuthController"),
+    BackupController: Symbol.for("BackupController"),
+    BookmarkController: Symbol.for("BookmarkController"),
+    ImageController: Symbol.for("ImageController"),
+    PublisherController: Symbol.for("PublisherController"),
+    UploadController: Symbol.for("UploadController"),
+    VideoController: Symbol.for("VideoController")
+}

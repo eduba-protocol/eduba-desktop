@@ -1,0 +1,1 @@
+export { diContainer } from "./inversify.config";

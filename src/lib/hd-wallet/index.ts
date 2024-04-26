@@ -1,0 +1,1 @@
+export { HdWallet } from "./hd-wallet";
