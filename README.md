@@ -30,16 +30,6 @@ Download and run the package for your OS from the [releases page](https://github
 
 Note:  Publishers are being renamed to Channels, so you may see those used interchangeably.  A publisher/channel is essentially the underlying data structure for transferring content.
 
-### Load Examples
-
-Try loading these pages:
-
-#### Eduba Protocol Overview
-dowoi6c8b5fp5rky4dbkn9kun4uk9x4ygtb6sowu6ujcr5i4wj9o/articles/1710785242545
-
-#### Article Examples
-xzx4qyfgsyyc67efe67zmbh6i9dtqk1drkbzrx1ewtjxp9dzz73o/articles/1710785896818
-
 ### Sign In
 Signing in allows you to publish articles, save bookmarks, and subscribe to channels.  Eduba uses your login credentials to generate the identifiers of the channels that you create.  To ensure that your publishers' identifiers are unique, Eduba uses recovery phrases and hardware wallets for signing in, as is common in cryptocurrency.  Eduba supports Ethereum and Bitcoin addresses, where each address is a unique user.  You are not required to be familiar with cryptocurrency to use Eduba.  Just click on the icon for generating a phrase, save it as you would a password, and use it to sign in.  In the future, Eduba will use a smart contract based account identifier instead of login credentials as the key to generate channel identifiers.
 
